@@ -34,9 +34,12 @@ public class XmlServlet extends HttpServlet {
 		String username = request.getParameter("userName");
 		String fullname = request.getParameter("fullName");
 		String prof = request.getParameter("prof");
+		String[] locations = request.getParameterValues("location");
 		out.println(username + " says hello!");
 		out.println("We know your full name is: " + fullname);
 		out.println("You are a " + prof);
+		for (String l : locations)
+			out.println("You are located at " + l);
 	}
 
 }
